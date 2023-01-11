@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+
+<body>
+
+  <div class="left-side"></div>
+
+  <div class="right-side">
+    <form action="">
+      <label for="username">Cardholder Name</label>
+      <input id="username" max="20" min="6" type="text" placeholder="e.g. Jane Appleseed">
+      <div class="none error">Enter the cardholder name</div>
+
+      <label for="number">Card Number</label>
+      <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000">
+      <div class="none error">Wrong format</div>
+
+      <div class="bottom">
+
+        <div class="left">
+          <label for="">Exp. Date (MM/YY)</label>
+          <div class="inputs">
+            <div>
+              <select name="months" id="months">
+                <option selected disabled hidden>MM</option>
+                <option value="">01</option>
+                <option value="">02</option>
+                <option value="">03</option>
+                <option value="">04</option>
+                <option value="">05</option>
+                <option value="">06</option>
+                <option value="">07</option>
+                <option value="">08</option>
+                <option value="">09</option>
+                <option value="">10</option>
+                <option value="">11</option>
+                <option value="">12</option>
+              </select>
+              <div class="none error">Can't be blank</div>
+            </div>
+
+            <div>
+              <select name="year" id="year">
+                <option selected disabled hidden>YY</option>
+                <option value="">23</option>
+                <option value="">24</option>
+                <option value="">25</option>
+                <option value="">26</option>
+                <option value="">27</option>
+                <option value="">28</option>
+              </select>
+              <div class="none error">Can't be blank</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="right">
+          <label for="">CVC</label>
+          <input type="text" placeholder="e.g 123" id="cvc">
+          <div class="none error">Can't be blank</div>
+        </div>
+      </div>
+
+      <button class="primary" type="submit">Confirm</button>
+    </form>
+
+    <form class="complete remove-layout">
+      <img src="../images/icon-complete.svg" alt="CompleteIcon">
+      <article>
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+      </article>
+      <button class="primary">Continue</button>
+    </form>
+  </div>
+
+  <div class="card front">
+    <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+      <path
+        d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+        stroke="#fff" />
+    </svg>
+
+    <div class="card-number">0000 0000 0000 0000</div>
+
+    <div class="card-bottom">
+      <div class="name">Jane Appleseed</div>
+      <div class="expire-date">
+        <span>00</span>
+        /
+        <span>00</span>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="card back">
+    <div>
+      <div class="cvc">000</div>
+    </div>
+  </div>
+
+
+  <!-- Completed state start -->
+
+  <!-- Thank you!
+  We've added your card details
+  Continue -->
+  <!-- 
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer> -->
+
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+:root {
+  --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --border-color: hsl(278, 94%, 30%);
+  ;
+  --red: hsl(0, 100%, 66%);
+
+  --White: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+
+.complete {
+  transition-delay: 500ms;
+}
+
+.none {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.remove-layout {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.error {
+  transition: all 300ms ease;
+  color: var(--red);
+  font-size: 0.7rem;
+  margin-bottom: 1.25rem;
+}
+
+
+body,
+html {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  max-width: 1440px;
+  display: flex;
+  position: relative;
+  margin-inline: auto;
+}
+
+.card {
+  position: absolute;
+  border-radius: .5rem;
+  width: 30%;
+  aspect-ratio: 2;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 10px 1px var(--very-dark-violet);
+}
+
+.card * {
+  color: var(--White);
+  letter-spacing: .2ch;
+  text-transform: uppercase;
+}
+
+
+.front {
+  top: 20%;
+  left: 10%;
+  background-image: url("../../images/bg-card-front.png");
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.front>svg {
+  flex-grow: 3;
+}
+
+.front>*:not(svg) {
+  flex-grow: 1;
+}
+
+.card-number {
+  font-size: 1.25rem;
+  min-height: 2.8ch;
+}
+
+.name,
+.expire-date {
+  font-size: .8rem;
+}
+
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  top: 55%;
+  left: 18%;
+  background-image: url("../../images/bg-card-back.png");
+}
+
+.back>div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cvc {
+  position: absolute;
+  top: calc(50% - .25rem);
+  right: 10%;
+}
+
+.left-side {
+  width: 33%;
+  background-image: url("../../images/bg-main-desktop.png");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right-side {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  font-size: .85rem;
+  transition-property: opacity, visibility;
+  transition: 300ms ease;
+}
+
+img {
+  width: 20%;
+  object-fit: contain;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+form article {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form article>* {
+  margin-bottom: 1rem;
+}
+
+form h1 {
+  font-size: 2rem;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+}
+
+form p {
+  color: var(--dark-grayish-violet);
+}
+
+form label {
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: .2ch;
+  display: block;
+  color: var(--very-dark-violet);
+}
+
+form input {
+  border-radius: .5rem;
+  border: 1px solid var(--light-grayish-violet);
+  padding: .5rem;
+}
+
+form input::placeholder {
+  color: var(--light-grayish-violet);
+}
+
+form :is(input, select):focus {
+  border: 1px solid var(--border-color);
+}
+
+
+.bottom {
+  display: flex;
+  gap: .5rem;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  flex-grow: 1;
+}
+
+.right input {
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.inputs>div {
+  flex: 1;
+}
+
+.inputs select {
+  width: 100%;
+}
+
+
+button.primary {
+  border-radius: .5rem;
+  background-color: var(--very-dark-violet);
+  color: var(--White);
+  padding-block: .5rem;
+  border: none;
+  cursor: pointer;
+}
+
+select {
+  border-radius: .5rem;
+  border: 1px solid var(--light-grayish-violet);
+  padding: .5rem;
+  appearance: none;
+  flex: 1;
+  color: var(--dark-grayish-violet);
+}
+
+/* select:has(option[selected]) {
+  color: var(--very-dark-violet);
+} */
+
+/* Mobile  Form */
+@media (max-width:1100px) {
+
+  body,
+  html {
+    flex-direction: column;
+    font-size: 16px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .card {
+    width: 65%;
+    max-width: 300px;
+  }
+
+  .card * {
+    font-size: 12px;
+  }
+
+  .left-side {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+
+  .back {
+    top: 1rem;
+    left: 3rem;
+    z-index: 1;
+  }
+
+  .front {
+    top: 7rem;
+    left: 1rem;
+    z-index: 2;
+  }
+}
