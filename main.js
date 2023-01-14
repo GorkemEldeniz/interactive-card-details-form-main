@@ -1,4 +1,5 @@
 import Inputmask from "./node_modules/inputmask/dist/inputmask.es6.js";
+// import Inputmask from "inputmask.es6.js";
 
 const cardNumberInput = document.getElementById("number");
 const cvcNumberInput = document.getElementById("cvc");
